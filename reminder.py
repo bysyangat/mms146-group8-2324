@@ -1,4 +1,5 @@
 from datetime import datetime
+from reminder_abstract import ReminderAbstract
 
 class Reminder(ReminderAbstract):
     def __init__(self, task):
