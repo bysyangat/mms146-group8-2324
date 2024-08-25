@@ -22,7 +22,30 @@ class TaskManager:
             self.tasks[item] = edited_task
         # shows the user that 'item' input is not an integer
         else: print("Please enter a number for item.")
-
+            
+  def delete_task(self, item):
+        '''
+        Delete a task from the list
+        '''
+        if item.isdigit() and int(item) < len(self.tasks):
+            del self.tasks[int(item)]
+        else:
+            print("Please enter a valid number for the item.")
+    
+    def view_tasks(self):
+        '''
+        View all tasks
+        '''
+        for idx, task in enumerate(self.tasks):
+            print(f"Task {idx}: {task.task_name}, Description: {task.description}, Due Date: {task.due_date}, Priority: {task.priority_level}, Status: {task.completion_status}%")
+    
+    def sort_tasks_by_priority(self):
+        '''
+        Sort tasks by priority level (low, medium, high)
+        '''
+        priority_map = {"low": 1, "medium": 2, "high": 3}
+        self.tasks.sort(key=lambda task: priority_map[task.priority_level])
+        print("Tasks sorted by priority.")
 
     def get_overdue_tasks(self):
     '''
