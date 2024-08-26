@@ -21,6 +21,8 @@ task_manager.add_task(task2)
 task_manager.add_task(task3)
 task_manager.add_task(task4)
 task_manager.delete_task(task4)
+task_manager.edit_task(task1, "due_date", datetime.datetime(2024, 8, 31, 11, 59))
+task_manager.edit_task(task3, "description", "2 part multiple choice tests")
 task_manager.sort_tasks_by_priority()
 task_manager.view_tasks()
 
