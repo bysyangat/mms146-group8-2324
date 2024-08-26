@@ -26,4 +26,8 @@ task_manager.edit_task(task3, "description", "2 part multiple choice tests")
 task_manager.sort_tasks_by_priority()
 task_manager.view_tasks()
 
+# Overdue Tasks Test
+print("Overdue tasks:")
+overdue_tasks = task_manager.get_overdue_tasks()
+
 #Reminder Methods Test
