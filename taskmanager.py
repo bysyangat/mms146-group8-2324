@@ -63,3 +63,12 @@ def get_overdue_tasks(self):
 
         # Return the list of formatted overdue tasks
         return overdue_tasks
+
+def display_overdue_tasks(self):
+        print("Overdue tasks:")
+        overdue_tasks = self.get_overdue_tasks()
+        if overdue_tasks:
+            for overdue_task in overdue_tasks:
+                print(overdue_task)
+        else:
+            print("No overdue tasks found.")
