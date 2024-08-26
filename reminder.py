@@ -1,25 +1,27 @@
 from datetime import datetime
-from reminder_abstract import ReminderAbstract
 
-class Reminder(ReminderAbstract):
+class Reminder:
     def __init__(self, task):
         self.task = task
-        #Calculate how much time remains until the assignment's due date.
-        self.time_until_deadline = task.due_date - datetime.now()
-        #Create the initial reminder message.
         self.notifications = self.generate_reminder()
 
     def generate_reminder(self):
-        if self.time_until_deadline.days < 0:
+        """
+        Generate a reminder message based on the task's due date.
+        """
+        now = datetime.now().date()  # Get today's date without time
+        due_date = self.task.due_date.date()  # Get the task's due date without time
+
+        if due_date < now:
             return f"Oh no! Task '{self.task.task_name}' is OVERDUE!"
-        elif self.time_until_deadline.days == 0:
-            return f"Hurry! Task '{self.task.task_name} is DUE TODAY!"
+        elif due_date == now:
+            return f"Hurry! Task '{self.task.task_name}' is DUE TODAY!"
         else:
-            return f"Due Soon! Task '{self.task.task_name} is due in {self.time_until_deadline.days} days."
+            days_remaining = (due_date - now).days  # Calculate the days remaining
+            return f"Due Soon! Task '{self.task.task_name}' is due in {days_remaining} days."
 
     def display_notification(self):
+        """
+        Display the reminder notification to the user.
+        """
         print(self.notifications)
-        
-            
-        
-  
