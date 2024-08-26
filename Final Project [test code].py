@@ -29,5 +29,14 @@ task_manager.view_tasks()
 # Overdue Tasks Test
 print("Overdue tasks:")
 overdue_tasks = task_manager.get_overdue_tasks()
+if overdue_tasks:
+    for overdue_task in overdue_tasks:
+        print(overdue_task)
+else:
+    print("No overdue tasks found.")
 
-#Reminder Methods Test
+# Reminder Methods Test for each task
+print("Task Reminders:")
+for task in task_manager.tasks:
+    reminder = Reminder(task)
+    reminder.display_notification()
