@@ -16,12 +16,19 @@ class TaskManager:
         '''
         Edit a task
         '''
-        # checks if the input for 'item' is an integer
-        if item.isdigit(item):
-            # this updates a specific item in a list
-            self.tasks[item] = edited_task
-        # shows the user that 'item' input is not an integer
-        else: print("Please enter a number for item.")
+        # allows the user to edit a specific task attribute based on input 
+        if detail == "task_name":
+            task.task_name = edit
+        if detail == "description":
+            task.set_description(edit)
+        if detail == "due_date":
+            task.due_date = edit
+        if detail == "priority_level":
+            task.set_priority(edit)
+        if detail == "completion_status":
+            task.set_completion_status(edit)
+        
+        else: print("Please enter a task attribute.")
             
     def delete_task(self, item):
         '''
