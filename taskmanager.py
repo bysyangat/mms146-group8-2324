@@ -51,15 +51,15 @@ class TaskManager:
         self.tasks.sort(key=lambda task: priority_map[task.priority_level])
         print("Tasks sorted by priority.")
 
-    def get_overdue_tasks(self):
-        '''
-        Show tasks that are overdue
-        '''
+def get_overdue_tasks(self):
+        '''Show tasks that are overdue'''
         now = datetime.datetime.now()
         overdue_tasks = []
-    
+
         for task in self.tasks:
+            # Check if the due_date is before now and the task is not completed
             if task.due_date < now and task.completion_status < 100:
-                overdue_tasks.append(task)
-                
+                overdue_tasks.append(f"{task.task_name} (Due: {task.due_date}, Priority: {task.priority_level}, Status: {task.completion_status}%)")
+
+        # Return the list of formatted overdue tasks
         return overdue_tasks
