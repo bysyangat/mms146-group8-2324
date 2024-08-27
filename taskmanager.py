@@ -12,7 +12,7 @@ class TaskManager:
         # the append method adds an item in a list
         self.tasks.append(task)
     
-    def edit_task(self, item, edited_task):
+    def edit_task(self, item, edit):
         '''
         Edit a task
         '''
