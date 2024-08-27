@@ -1,9 +1,8 @@
 import datetime
-from task import Task
 
 class TaskManager:
     def __init__(self):
-        self.tasks = []
+        self.tasks = []        # the list of tasks
     
     def add_task(self, task):
         '''
@@ -52,7 +51,9 @@ class TaskManager:
         print("Tasks sorted by priority.")
 
     def get_overdue_tasks(self):
-        '''Show tasks that are overdue'''
+        '''
+        Get the tasks that are not yet done but are past the due date
+        '''
         now = datetime.datetime.now().date()  # Get today's date without time
         overdue_tasks = []
 
