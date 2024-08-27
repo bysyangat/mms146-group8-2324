@@ -11,7 +11,7 @@ task3 = Task("Final Exam", "Multiple Choice Test", datetime.datetime(2024, 9, 1,
 task4 = Task("Blog 2", "End term reflection", datetime.datetime(2024, 8, 31, 11, 59), "medium", 20)
 
 #Task Methods Test
-task1.set_description("Critically ssess an scientific article")
+task1.set_description("Critically assess an scientific article")
 task2.set_priority("medium")
 task3.set_completion_status(50)
 
