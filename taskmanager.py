@@ -30,7 +30,7 @@ class TaskManager:
         
         else: print("Please enter a task attribute.")
             
-    def delete_task(self, item):
+    def delete_task(self, task):
         '''
         Delete a task from the list
         '''
