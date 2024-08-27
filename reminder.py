@@ -1,14 +1,17 @@
 from datetime import datetime
 
 class Reminder:
+    '''
+    Reminder is an object that exhibits the characteristics and behaviors of a task reminder
+    '''
     def __init__(self, task):
         self.task = task
         self.notifications = self.generate_reminder()
 
     def generate_reminder(self):
-        """
-        Generate a reminder message based on the task's due date.
-        """
+        '''
+        Generate a reminder message based on the task's due date
+        '''
         now = datetime.now().date()  # Get today's date without time
         due_date = self.task.due_date.date()  # Get the task's due date without time
 
@@ -21,7 +24,7 @@ class Reminder:
             return f"Due Soon! Task '{self.task.task_name}' is due in {days_remaining} days."
 
     def display_notification(self):
-        """
-        Display the reminder notification to the user.
-        """
+        '''
+        Display the reminder notification to the user
+        '''
         print(self.notifications)
