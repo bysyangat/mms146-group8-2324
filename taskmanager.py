@@ -1,6 +1,9 @@
 import datetime
 
 class TaskManager:
+    '''
+    TaskManager is an object that exhibits the behaviors of a task manager
+    '''
     def __init__(self):
         self.tasks = []        # the list of tasks
     
